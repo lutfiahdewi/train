@@ -25,6 +25,13 @@
         </div>
       </div>
     </div>
+	<div class="debugging">
+		<?php 
+		if (isset($_COOKIE['token'])) {
+			echo $_COOKIE['token'];
+		}
+		?>
+	</div>
   </div>
 </section>
 

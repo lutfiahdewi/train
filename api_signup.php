@@ -7,7 +7,8 @@ $data = array(
     'username' => $_POST["username"],
     'name' =>  $_POST["name"],
     'email' =>  $_POST["email"],
-    'password' =>  $_POST["password"]
+    'password' =>  $_POST["password"],
+	'confpassword' =>  $_POST["confpassword"]
 );
  
 $payload = json_encode($data);

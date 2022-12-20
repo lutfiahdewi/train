@@ -1,7 +1,7 @@
 <?php 
 include 'header.php'; 
 if (isset($_COOKIE['token'])) {
-    //header("Location: index.php");
+    header("Location: index.php");
 }
 ?>
 

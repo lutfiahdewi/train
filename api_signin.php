@@ -7,8 +7,6 @@ $data = array(
 );
 
 $payload = json_encode($data);
-echo $payload . '<br><br>';
-
 
 // Prepare new cURL resource
 $url = 'http://localhost:8080/login';
@@ -27,21 +25,20 @@ curl_setopt(
 curl_setopt($curl, CURLOPT_POSTFIELDS, $payload);
 
 $response = curl_exec($curl);
-$result = json_decode($response, true);
-echo gettype($response) . '<br>';
-
-
-echo $result;
+//header_remove tp gk work
+$response = substr($response, 0, 271);
+$result = json_decode($response);
+//var_dump($result);
 
 // Close cURL session handle
 curl_close($curl);
 
 if (strlen($response) > 200) {
-    $token = substr($response, 10, 177);
-    $role = substr($response, 197, 6);
+    $token = $result->token;
+    $role = $result->role;
     setcookie('token', $token, time() + (86400 * 30), "/"); // 86400 = 1 day
     setcookie('role', $role, time() + (86400 * 30), "/"); // 86400 = 1 day
-    echo "
+	echo "
      <script>
          alert('Berhasil Login.');
          document.location.href='index.php';
@@ -56,4 +53,4 @@ if (strlen($response) > 200) {
      </script>";
 }
 
-echo $_COOKIE['token'];
+//echo $_COOKIE['token'];

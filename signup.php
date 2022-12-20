@@ -19,7 +19,7 @@ if (isset($_COOKIE['token'])) {
                     </div>
                     <div class="form-group">
                         <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                        <input type="text" name="username" id="username" placeholder="Your Userame" />
+                        <input type="text" name="username" id="username" placeholder="Your Username" />
                     </div>
                     <div class="form-group">
                         <label for="email"><i class="zmdi zmdi-email"></i></label>
@@ -31,7 +31,7 @@ if (isset($_COOKIE['token'])) {
                     </div>
                     <div class="form-group">
                         <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
-                        <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" />
+                        <input type="password" name="confpassword" id="confpassword" placeholder="Repeat your password" />
                     </div>
                     <div class="form-group form-button">
                         <input type="submit" name="signup" id="register-form" class="form-submit" value="Register" />
